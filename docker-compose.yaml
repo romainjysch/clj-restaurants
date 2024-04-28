@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+
+  mariadb:
+    volumes:
+      - .docker/mariadb:/docker-entrypoint-initdb.d
+    image: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=restaurants
+      - MARIADB_USER=mysqluser
+      - MARIADB_PASSWORD=mysqlpw
